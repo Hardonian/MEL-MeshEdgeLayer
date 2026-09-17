@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Meta-package. The actual Next.js app lives in ./site (next@16, react@19) and is built by vercel.json / CI with working-directory: site. Dependabot should scan ./site/package.json, NOT this root manifest.",
   "engines": {
-    "node": ">=24 <25"
+    "node": ">=20"
   },
   "scripts": {
     "build": "cd site && npm run build",
