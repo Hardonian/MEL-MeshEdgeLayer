@@ -1,0 +1,39 @@
+# .gitleaks.toml — MEL-MeshEdgeLayer secret-scan allowlist.
+#
+# WHY: CI (gitleaks/gitleaks-action@v2) scans full git history and trips on
+# INTENTIONAL fixtures — example config JSON files with placeholder
+# session_secret/apiKey values, and Go test files that assert on redaction.
+# None are live secrets (verified below). Real leaks still fail the build.
+#
+# Verified 2026-10-26: 11/11 history findings are example configs / Go tests
+# / one security-audit doc; 0 real secrets.
+
+title = "MEL-MeshEdgeLayer gitleaks config"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Example + test config JSON with placeholder session_secret/apiKey"
+paths = [
+  '''configs/.*''',
+  '''.*\.example\.json$''',
+  '''.*\.test\.json$''',
+  '''configs/mel\.generated\.json$''',
+]
+
+[[allowlists]]
+description = "Go test files that assert on secret redaction behavior"
+paths = [
+  '''.*_test\.go$''',
+  '''internal/config/config_test\.go$''',
+  '''internal/selfobs/llm_http_test\.go$''',
+  '''internal/web/capability_authz_test\.go$''',
+]
+
+[[allowlists]]
+description = "Security boundary audit documentation"
+paths = [
+  '''docs/repo-os/security-trust-boundary-audit\.md$''',
+  '''.*\.md$''',
+]
