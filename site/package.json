@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "brace-expansion": "^5.0.12",
-    "next": "^16.3.8",
+    "next": "^16.4.1",
     "postcss": "^8.5.18",
     "react": "19.1.0",
     "react-dom": "19.1.0"
