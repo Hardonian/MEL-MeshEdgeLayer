@@ -32,8 +32,8 @@ require (
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	golang.org/x/sync v0.24.0 // indirect
-	golang.org/x/sys v0.49.0 // indirect
-	golang.org/x/term v0.47.0
+	golang.org/x/sys v0.50.0 // indirect
+	golang.org/x/term v0.48.0
 	golang.org/x/text v0.43.0 // indirect
 	modernc.org/sqlite v1.61.1
 )
